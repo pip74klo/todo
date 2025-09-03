@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rosybrown;
+  color: rgb(90, 68, 68);
+}
+
+.dark {
+  background-color: rgb(49, 49, 49);
+}
+
+.dark-color {
+  color: #d2d2d2;
+}
+
+.cross-dark {
+  color: #d2d2d2;
+}
+
+.ready-dark {
+  color: #d2d2d2;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  position: relative;
+}
+
+.todo {
+  width: 600px;
+  min-height: 300px;
+  padding: 0 8px;
+  position: relative;
+}
+
+.todo__title-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 55px;
+  font-weight: 600;
+  position: relative;
+}
+
+.todo__title-image {
+  position: absolute;
+  width: 40px;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.todo__title-one {
+  color: #8A2828;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.todo__title-two {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #E25858;
+}
+
+.todo__title-info-task-created {
+  position: absolute;
+  font-size: 18px;
+  left: 0;
+  top: 0;
+}
+
+.todo__title-info-task-completed {
+  position: absolute;
+  left: 90%;
+  top: 15%;
+}
+
+.todo__form {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.todo__form-input {
+  margin: 0;
+  font-size: 22px;
+  flex-grow: 3;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  padding-left: 20px;
+  border: 2px solid rosybrown;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  color: #8A2828;
+}
+
+
+.todo__form>label {
+  position: absolute;
+  top: 89px;
+  left: 30px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #8A2828;
+  transition: all .3s ease-in-out;
+}
+
+.todo__form-input:focus {
+  border: 2px solid #5a4444;
+  background-color: rgb(235, 233, 233);
+  outline: none;
+}
+
+
+.todo__form-input:focus+label,
+.todo__form-input:not(:placeholder-shown)+label {
+  scale: 0.9;
+  translate: -1em -1.7em;
+}
+
+body.dark .todo__form-input:focus+label,
+body.dark .todo__form-input:not(:placeholder-shown)+label {
+  scale: 0.9;
+  translate: -1em -1.7em;
+  color: rgba(219, 219, 14, 0.897);
+}
+
+.todo__form-btn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  flex-grow: 1;
+  border: 2px solid transparent;
+  color: #8A2828;
+  cursor: pointer;
+}
+
+.todo__form-btn:hover {
+  border: 2px solid #5a4444;
+}
+
+.todo__form-btn.close-btn {
+  position: absolute;
+  left: 428px;
+  top: 25px
+}
+
+.todo__form-btn:active {
+  scale: 1.07;
+  transition: 0.1s ease-in-out
+}
+
+.tasks__stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  color: #8A2828;
+  margin: 15px 15px 15px 15px;
+  position: relative;
+}
+
+body.dark .tasks__stats {
+  color: rgba(238, 238, 12, 0.897);
+}
+
+.tasks__stats span {
+  padding: 1px 3px;
+  background-color: #E25858;
+  border-radius: 50%;
+  text-align: center;
+}
+
+body.dark .tasks__stats span {
+  background-color: #4a66b1;
+  color: black;
+}
+
+.todo__output {
+  margin-bottom: 100px;
+}
+
+.task {
+  margin-top: 5px;
+  font-size: 22px;
+  padding: 8px 10px;
+  font-weight: 600;
+  color: rgb(90, 68, 68);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #5a4444;
+}
+
+.task:hover {
+  background-color: #b67f7f;
+}
+
+body.dark .task:hover {
+  background-color: #836e6e;
+}
+
+.task span {
+  padding: 0 5px;
+  flex-wrap: wrap;
+  pointer-events: none;
+  user-select: none
+}
+
+.img-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.cross {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.ready {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.green {
+  color: rgb(56, 143, 56);
+}
+
+.theme__btn {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.theme__btn-img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

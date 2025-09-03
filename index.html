@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Todo List</title>
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <main class="main">
+      <div class="container">
+        <div class="todo">
+          <div class="todo__title-group">
+            <h1 class="todo__title-one">Todo</h1>
+            <img class="todo__title-image" src="assets/rocket.svg" alt="" />
+            <h1 class="todo__title-two">List</h1>
+          </div>
+
+          <form class="todo__form">
+            <input
+              type="text"
+              id="input"
+              class="todo__form-input"
+              placeholder=""
+              autocomplete="off"
+            />
+            <label for="input">add a task</label>
+            <button class="todo__form-btn">Add</button>
+          </form>
+
+          <div class="tasks__stats">
+            <div class="tasks__stats-all-tasks">Всего задач <span>0</span></div>
+            <div class="tasks__stats-completed">Выполнено <span>0</span></div>
+          </div>
+
+          <ul class="todo__output"></ul>
+        </div>
+        <button class="theme__btn">
+          <img class="theme__btn-img" src="assets/light.svg" alt="light" />
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
