@@ -356,4 +356,22 @@ body.dark .completed {
   .task__filters {
     font-size: 16px;
   }
+
+  .task__filters-box {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+
+@media (max-width: 390px) {
+  .tasks__stats {
+    min-width: 330px;
+  }
+}
+
+@media (max-width: 360px) {
+  .tasks__stats {
+    min-width: 310px;
+  }
 }
