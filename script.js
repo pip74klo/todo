@@ -6,9 +6,11 @@ const statsCompletedTasks = document.querySelector('.tasks__stats-completed > sp
 const themeBtn = document.querySelector('.theme__btn')
 const imgBtn = document.querySelector('.theme__btn-img')
 const body = document.querySelector('body')
+const filtersParent = document.querySelector('.task__filters')
 
 let taskList;
 let theme = 'light'
+let filter = 'all'
 
 function getLocalStorage() {
   const localList = JSON.parse(localStorage.getItem('taskList'))
@@ -46,7 +48,16 @@ function deleteTask(e) {
 
 function render() {
   todoOutput.innerHTML = ''
-  taskList.forEach(({ title, isCompleted, id }) => {
+  let list = taskList
+
+  if (filter === 'active') {
+    list = taskList.filter(task => task.isCompleted === false)
+  }
+  if (filter === 'completed') {
+    list = taskList.filter(task => task.isCompleted === true)
+  }
+
+  list.forEach(({ title, isCompleted, id }) => {
     const taskElement = document.createElement('li')
     taskElement.classList.add('task')
     taskElement.setAttribute('id', id)
@@ -54,7 +65,7 @@ function render() {
     <span class="task-text ${theme === 'light' ? "" : 'dark-color'} ${isCompleted ? 'completed' : ''}"  >${title}</span>
     <div class="img-icon">
       <svg class="ready ${theme === 'light' ? "" : 'ready-dark'} ${isCompleted ? 'completed' : ''} ">
-        <use href="assets/sprites.svg#${isCompleted ? 'ok-icon' : 'circle'}"></use>circle
+        <use href="assets/sprites.svg#${isCompleted ? 'ok-icon' : 'circle'}"></use>
       </svg>
       <svg class="cross ${theme === 'light' ? "" : 'cross-dark'}">
         <use href="assets/sprites.svg#cross-icon"></use>
@@ -114,6 +125,12 @@ themeBtn.addEventListener('click', () => {
   render()
 })
 
+filtersParent.addEventListener('change', (e) => {
+  if (e.target.classList.contains('task__filters-input')) {
+    filter = e.target.value
+    render()
+  }
+})
 
 getLocalStorage()
 changeTheme()

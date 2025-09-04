@@ -35,6 +35,46 @@
             <div class="tasks__stats-completed">Выполнено <span>0</span></div>
           </div>
 
+          <div class="task__filters">
+            <div class="task__filters-box">
+              <label class="task__filters-label" for="filter-all"
+                >Все задачи</label
+              >
+              <input
+                class="task__filters-input"
+                type="radio"
+                name="filter"
+                id="filter-all"
+                value="all"
+                checked
+              />
+            </div>
+            <div class="task__filters-box">
+              <label class="task__filters-label" for="filter-active"
+                >Активные</label
+              >
+              <input
+                class="task__filters-input"
+                type="radio"
+                name="filter"
+                id="filter-active"
+                value="active"
+              />
+            </div>
+            <div class="task__filters-box">
+              <label class="task__filters-label" for="filter-completed"
+                >Завершенные</label
+              >
+              <input
+                class="task__filters-input"
+                type="radio"
+                name="filter"
+                id="filter-completed"
+                value="completed"
+              />
+            </div>
+          </div>
+
           <ul class="todo__output"></ul>
         </div>
         <button class="theme__btn">
