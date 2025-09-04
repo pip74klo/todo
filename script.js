@@ -51,9 +51,9 @@ function render() {
     taskElement.classList.add('task')
     taskElement.setAttribute('id', id)
     taskElement.innerHTML = `
-    <span class="task-text ${theme === 'light' ? "" : 'dark-color'} ${isCompleted ? 'green' : ''}"  >${title}</span>
+    <span class="task-text ${theme === 'light' ? "" : 'dark-color'} ${isCompleted ? 'completed' : ''}"  >${title}</span>
     <div class="img-icon">
-      <svg class="ready ${theme === 'light' ? "" : 'ready-dark'} ${isCompleted ? 'green' : ''} ">
+      <svg class="ready ${theme === 'light' ? "" : 'ready-dark'} ${isCompleted ? 'completed' : ''} ">
         <use href="assets/sprites.svg#ok-icon"></use>
       </svg>
       <svg class="cross ${theme === 'light' ? "" : 'cross-dark'}">
@@ -72,9 +72,11 @@ function updateStats() {
 }
 
 function changeTheme() {
+  const todoTitleImage = document.querySelector('.todo__title-image')
   body.classList.remove('light', 'dark')
   body.classList.add(theme)
   imgBtn.src = `${theme === 'light' ? "assets/light.svg" : "assets/dark.svg"}`
+  todoTitleImage.src = `${theme === 'light' ? "assets/rocket.svg" : "assets/rocket-dark.svg"}`
 }
 
 function changeTaskStatus(e) {
