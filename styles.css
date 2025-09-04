@@ -261,6 +261,16 @@ body.dark .task:hover {
   cursor: pointer;
 }
 
+.cross:hover,
+.ready:hover {
+  color: #8A2828;
+}
+
+body.dark .cross:hover,
+body.dark .ready:hover {
+  color: #BE5D0E
+}
+
 .completed {
   color: #8A2828;
   text-decoration: line-through;
@@ -270,7 +280,6 @@ body.dark .completed {
   color: rgb(192, 156, 108);
   text-decoration: line-through;
 }
-
 
 .theme__btn {
   position: relative;

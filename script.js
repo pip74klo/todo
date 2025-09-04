@@ -54,7 +54,7 @@ function render() {
     <span class="task-text ${theme === 'light' ? "" : 'dark-color'} ${isCompleted ? 'completed' : ''}"  >${title}</span>
     <div class="img-icon">
       <svg class="ready ${theme === 'light' ? "" : 'ready-dark'} ${isCompleted ? 'completed' : ''} ">
-        <use href="assets/sprites.svg#ok-icon"></use>
+        <use href="assets/sprites.svg#${isCompleted ? 'ok-icon' : 'circle'}"></use>circle
       </svg>
       <svg class="cross ${theme === 'light' ? "" : 'cross-dark'}">
         <use href="assets/sprites.svg#cross-icon"></use>
