@@ -14,13 +14,13 @@ let filter = 'all'
 
 function getLocalStorage() {
   const localList = JSON.parse(localStorage.getItem('taskList'))
-  const localTheme = JSON.parse(localStorage.getItem('theme'))
+  const localTheme = localStorage.getItem('theme')
   theme = localTheme || 'light'
   taskList = localList || []
 }
 
 function setLocalStorageTheme(value) {
-  localStorage.setItem('theme', JSON.stringify(value))
+  localStorage.setItem('theme', value)
 }
 
 function setLocalStorage(taskList) {
