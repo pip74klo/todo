@@ -7,6 +7,7 @@ const themeBtn = document.querySelector('.theme__btn')
 const imgBtn = document.querySelector('.theme__btn-img')
 const body = document.querySelector('body')
 const filtersParent = document.querySelector('.task__filters')
+const logoImg = document.querySelector('.todo__title-image')
 
 let taskList;
 let theme = 'light'
@@ -103,6 +104,16 @@ function changeTaskStatus(e) {
   render()
 }
 
+const clearTaskList = () => {
+  const message = 'Очистить задачи?'
+  if (confirm(message)) {
+    taskList = []
+
+    render()
+    setLocalStorage(taskList)
+  }
+}
+
 todoForm.addEventListener('submit', (e) => {
   e.preventDefault()
   addTask()
@@ -131,6 +142,8 @@ filtersParent.addEventListener('change', (e) => {
     render()
   }
 })
+
+logoImg.addEventListener('click', clearTaskList)
 
 getLocalStorage()
 changeTheme()
